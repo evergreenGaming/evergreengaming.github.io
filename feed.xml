@@ -3,13 +3,27 @@
   <title>Evergreen Gaming Dev Blog</title>
   <link href="https://evergreengaming.github.io/" rel="alternate" type="text/html"/>
   <link href="https://evergreengaming.github.io/feed.xml" rel="self" type="application/atom+xml"/>
-  <updated>2026-02-25T00:00:00Z</updated>
+  <updated>2026-02-28T00:00:00Z</updated>
   <id>https://evergreengaming.github.io/</id>
   <subtitle>Game development powered by AI Collaboration. A structured public lab notebook documenting projects, tools, and experiments.</subtitle>
   <author>
     <name>Moritz Meyers</name>
     <uri>https://github.com/evergreenGaming</uri>
   </author>
+
+
+  <entry>
+    <title>When AI Tools Start Feeding Each Other: Our New Dev Workflow Experiment</title>
+    <link href="https://evergreengaming.github.io/posts/codex-session-workflow.html" rel="alternate" type="text/html"/>
+    <id>https://evergreengaming.github.io/posts/codex-session-workflow.html</id>
+    <published>2026-02-28T00:00:00Z</published>
+    <updated>2026-02-28T00:00:00Z</updated>
+    <summary>A workflow experiment combining Codex/CYOU sandbox execution, Copilot + VS Code local validation, and PR-first collaboration into one connected, recursive development loop.</summary>
+    <category term="meta"/>
+    <category term="workflow"/>
+    <category term="tools"/>
+    <category term="web"/>
+  </entry>
 
   <entry>
     <title>AI to the Rescue: Letting AI Handle Repetitive Explanations</title>

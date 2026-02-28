@@ -1,0 +1,33 @@
+# Ignore workspace settings
+*.code-workspace
+
+# Node modules
+node_modules/
+
+# OS generated files
+.DS_Store
+Thumbs.db
+
+# Logs
+*.log
+
+# IDE files
+.vscode/
+
+# Build output
+/dist/
+/build/
+
+# Misc
+.env
+*.bak
+*.tmp
+
+# Evergreen Gaming project files
+posts/
+feed.xml
+ai_notes.md
+index.html
+post-helper.js
+style.css
+tags-config.js

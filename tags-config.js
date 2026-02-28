@@ -40,6 +40,11 @@ const BLOG_CONFIG = {
 
   // Post metadata - central source of truth for all posts
   POSTS: {
+    "codex-session-workflow": {
+      topic: "meta",
+      project: "ai-experiment",
+      tags: ["meta", "workflow", "tools", "web"]
+    },
     "ai-to-the-rescue": {
       topic: "meta",
       project: "ai-experiment",
