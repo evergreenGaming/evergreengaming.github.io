@@ -169,6 +169,104 @@ main {
   margin: 0 auto;
 }
 
+/* Private access gate */
+.private-gate,
+.private-post-gate {
+  max-width: 620px;
+  margin-bottom: 28px;
+  padding: 20px 22px;
+  background:
+    radial-gradient(circle at top right, rgba(45, 134, 89, 0.2), transparent 34%),
+    linear-gradient(180deg, rgba(255, 255, 255, 0.02), rgba(255, 255, 255, 0.01)),
+    var(--panel);
+  border: 1px solid var(--border);
+  border-radius: 14px;
+  box-shadow: 0 14px 34px rgba(0, 0, 0, 0.24);
+}
+
+.private-gate h2,
+.private-post-gate h2 {
+  margin-top: 0;
+  margin-bottom: 8px;
+  color: var(--accent);
+  font-size: 1.4rem;
+}
+
+.private-gate p,
+.private-post-gate p {
+  margin: 0 0 10px;
+  color: var(--muted);
+}
+
+.private-gate-eyebrow {
+  margin-bottom: 8px;
+  letter-spacing: 0.16em;
+  text-transform: uppercase;
+  font-size: 0.72rem;
+  font-weight: 700;
+  color: #7fbf9b;
+}
+
+.private-gate-form {
+  display: flex;
+  gap: 10px;
+  flex-wrap: wrap;
+  margin-top: 12px;
+}
+
+.private-gate-form input {
+  flex: 1 1 280px;
+  min-width: 200px;
+  padding: 10px 12px;
+  background: var(--panel2);
+  border: 1px solid var(--border);
+  border-radius: 10px;
+  color: var(--text);
+}
+
+.private-gate-actions {
+  display: flex;
+  gap: 10px;
+  flex-wrap: wrap;
+  margin-top: 10px;
+}
+
+.private-gate-status {
+  margin-top: 10px;
+  min-height: 1.4em;
+  font-size: 0.95rem;
+  color: var(--muted);
+}
+
+.private-gate-status.is-error {
+  color: #ff948c;
+}
+
+.private-gate-status.is-success {
+  color: #8fe0b2;
+}
+
+.access-chip {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  padding: 6px 12px;
+  border-radius: 999px;
+  background: rgba(45, 134, 89, 0.14);
+  border: 1px solid rgba(45, 134, 89, 0.35);
+  color: #a6e1bf;
+  font-size: 0.9rem;
+  font-weight: 600;
+}
+
+.site-private-locked .posts {
+  display: none;
+}
+
+.site-private-locked .subscription-box {
+  border-color: rgba(45, 134, 89, 0.55);
+}
+
 /* Posts section */
 .posts h2 {
   margin-bottom: 30px;
@@ -431,6 +529,34 @@ body.icons-in-sticky .sticky-icons {
 
 .subscribe-button:focus {
   outline: 2px solid rgba(45, 134, 89, 0.45);
+  outline-offset: 2px;
+}
+
+.private-top-button {
+  padding: 10px 16px;
+  background: rgba(255, 255, 255, 0.04);
+  color: var(--muted);
+  border: 1px solid var(--border);
+  border-radius: 999px;
+  font-size: 0.9rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition: background 0.18s ease, border-color 0.18s ease, color 0.18s ease, transform 0.18s ease;
+}
+
+.private-top-button:hover {
+  background: rgba(255, 255, 255, 0.08);
+  border-color: rgba(121, 165, 255, 0.34);
+  color: var(--text);
+  transform: translateY(-1px);
+}
+
+.private-top-button:active {
+  transform: translateY(0);
+}
+
+.private-top-button:focus {
+  outline: 2px solid rgba(121, 165, 255, 0.34);
   outline-offset: 2px;
 }
 

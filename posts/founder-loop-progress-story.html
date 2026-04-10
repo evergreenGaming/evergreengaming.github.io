@@ -1,0 +1,540 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8"/>
+<meta content="width=device-width,initial-scale=1" name="viewport"/>
+<title>The Founder Loop Is Real: Promptomat, Heatstack, and Visible Progress - Evergreen Gaming</title>
+<link href="../style.css" rel="stylesheet"/>
+<script src="../tags-config.js"></script>
+<script src="../post-helper.js"></script>
+<style>
+  .post-content {
+    max-width: 860px;
+    margin: 0 auto;
+    padding: 60px 20px;
+  }
+  .post-header {
+    margin-bottom: 40px;
+    padding-bottom: 24px;
+    border-bottom: 1px solid var(--border);
+  }
+  .post-content h1 {
+    margin: 0 0 16px;
+    font-size: 2.5rem;
+    line-height: 1.15;
+  }
+  .post-content h2 {
+    margin: 40px 0 16px;
+    color: var(--accent);
+    font-size: 1.75rem;
+  }
+  .post-content p,
+  .post-content li,
+  .post-content blockquote {
+    line-height: 1.8;
+  }
+  .post-content p,
+  .post-content blockquote {
+    margin: 0 0 20px;
+  }
+  .post-content ul,
+  .post-content ol {
+    margin: 0 0 20px;
+    padding-left: 24px;
+  }
+  .back-link {
+    display: inline-block;
+    margin-bottom: 24px;
+    color: var(--muted);
+  }
+  .back-link:hover {
+    color: var(--accent);
+  }
+  blockquote {
+    margin: 24px 0;
+    padding: 16px 18px;
+    border-left: 4px solid var(--accent);
+    background: var(--panel);
+    border-radius: var(--radius);
+    font-style: italic;
+  }
+  .app-strip {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+    gap: 16px;
+    margin: 28px 0 32px;
+  }
+  .app-chip {
+    display: flex;
+    gap: 14px;
+    align-items: center;
+    padding: 16px 18px;
+    border: 1px solid var(--border);
+    border-radius: 16px;
+    background:
+      radial-gradient(circle at top right, rgba(45, 134, 89, 0.24), transparent 44%),
+      linear-gradient(180deg, rgba(255, 255, 255, 0.03), rgba(255, 255, 255, 0.01)),
+      var(--panel);
+    box-shadow: 0 14px 40px rgba(0, 0, 0, 0.22);
+  }
+  .app-chip img,
+  .app-chip .emoji-icon {
+    width: 52px;
+    height: 52px;
+    border-radius: 14px;
+    flex: 0 0 52px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border: 1px solid rgba(255, 255, 255, 0.08);
+    background: rgba(8, 11, 16, 0.82);
+    object-fit: cover;
+  }
+  .app-chip strong {
+    display: block;
+    margin-bottom: 4px;
+    font-size: 1rem;
+  }
+  .app-chip span {
+    color: var(--muted);
+    font-size: 0.95rem;
+  }
+  .hero-placeholder,
+  .media-placeholder {
+    margin: 28px 0;
+    border: 1px solid rgba(122, 163, 255, 0.2);
+    border-radius: 20px;
+    overflow: hidden;
+    background:
+      linear-gradient(180deg, rgba(3, 6, 12, 0.94), rgba(8, 12, 18, 0.98)),
+      var(--panel);
+    box-shadow: 0 20px 60px rgba(0, 0, 0, 0.35);
+  }
+  .hero-placeholder {
+    position: relative;
+    padding: 26px;
+    min-height: 360px;
+  }
+  .hero-glow {
+    position: absolute;
+    inset: 0;
+    background:
+      radial-gradient(circle at 72% 22%, rgba(58, 130, 246, 0.18), transparent 24%),
+      radial-gradient(circle at 24% 28%, rgba(45, 134, 89, 0.18), transparent 20%),
+      radial-gradient(circle at 50% 80%, rgba(205, 120, 72, 0.12), transparent 26%);
+    pointer-events: none;
+  }
+  .hero-layout {
+    position: relative;
+    display: grid;
+    grid-template-columns: 260px 1fr;
+    gap: 18px;
+    min-height: 308px;
+  }
+  .hero-rail,
+  .hero-main {
+    border: 1px solid rgba(255, 255, 255, 0.07);
+    border-radius: 18px;
+    background: rgba(10, 14, 20, 0.82);
+    backdrop-filter: blur(8px);
+  }
+  .hero-rail {
+    padding: 18px 16px;
+  }
+  .hero-main {
+    padding: 18px 18px 16px;
+    display: grid;
+    grid-template-rows: auto 1fr auto;
+    gap: 14px;
+  }
+  .hero-label,
+  .media-label {
+    letter-spacing: 0.18em;
+    text-transform: uppercase;
+    font-size: 0.78rem;
+    color: #79a5ff;
+    font-weight: 700;
+  }
+  .hero-panel-title {
+    margin: 8px 0 0;
+    font-size: 1.2rem;
+    font-weight: 800;
+  }
+  .hero-bars {
+    display: grid;
+    gap: 10px;
+    margin-top: 18px;
+  }
+  .hero-bar {
+    height: 12px;
+    border-radius: 999px;
+    background: rgba(255, 255, 255, 0.06);
+    overflow: hidden;
+  }
+  .hero-bar span {
+    display: block;
+    height: 100%;
+    border-radius: inherit;
+    background: linear-gradient(90deg, rgba(69, 138, 255, 0.96), rgba(90, 230, 185, 0.92));
+  }
+  .hero-cards {
+    display: grid;
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+    gap: 12px;
+  }
+  .hero-card,
+  .hero-detail {
+    border: 1px solid rgba(255, 255, 255, 0.07);
+    border-radius: 14px;
+    background: rgba(255, 255, 255, 0.03);
+    padding: 14px;
+  }
+  .hero-card strong,
+  .hero-detail strong {
+    display: block;
+    margin-bottom: 8px;
+  }
+  .hero-card span,
+  .hero-detail span,
+  .hero-note,
+  .media-placeholder p {
+    color: var(--muted);
+  }
+  .hero-footer {
+    display: flex;
+    gap: 10px;
+    flex-wrap: wrap;
+  }
+  .hero-pill {
+    padding: 8px 12px;
+    border-radius: 999px;
+    border: 1px solid rgba(121, 165, 255, 0.26);
+    background: rgba(24, 34, 50, 0.7);
+    font-size: 0.9rem;
+    color: #d9e5ff;
+  }
+  .media-placeholder {
+    padding: 20px;
+  }
+  .media-placeholder ul {
+    margin: 14px 0 0;
+  }
+  .icon-note {
+    color: var(--muted);
+    font-size: 0.95rem;
+  }
+  .post-image {
+    margin: 28px 0;
+  }
+  .post-image img {
+    width: 100%;
+    border-radius: 12px;
+    border: 1px solid var(--border);
+    cursor: zoom-in;
+  }
+  .post-image figcaption {
+    margin-top: 10px;
+    color: var(--muted);
+    font-size: 0.95rem;
+    font-style: italic;
+  }
+  .image-hint {
+    margin-top: 8px;
+    color: var(--muted);
+    font-size: 0.85rem;
+  }
+  .video-embed {
+    margin: 28px 0;
+    border: 1px solid rgba(122, 163, 255, 0.2);
+    border-radius: 20px;
+    overflow: hidden;
+    background:
+      linear-gradient(180deg, rgba(3, 6, 12, 0.94), rgba(8, 12, 18, 0.98)),
+      var(--panel);
+    box-shadow: 0 20px 60px rgba(0, 0, 0, 0.35);
+  }
+  .video-frame {
+    aspect-ratio: 16 / 9;
+    width: 100%;
+    border: 0;
+    display: block;
+  }
+  .video-caption {
+    padding: 14px 18px 18px;
+    color: var(--muted);
+    font-size: 0.95rem;
+    font-style: italic;
+  }
+  .related-posts {
+    margin: 40px 0 0;
+  }
+  .related-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+    gap: 14px;
+    margin-top: 18px;
+  }
+  .related-card {
+    display: block;
+    padding: 16px 16px 14px;
+    border: 1px solid var(--border);
+    border-radius: 16px;
+    background:
+      radial-gradient(circle at top right, rgba(45, 134, 89, 0.16), transparent 42%),
+      linear-gradient(180deg, rgba(255,255,255,0.03), rgba(255,255,255,0.01)),
+      var(--panel);
+    color: var(--text);
+    text-decoration: none;
+  }
+  .related-card:hover {
+    border-color: rgba(121, 165, 255, 0.34);
+    transform: translateY(-1px);
+  }
+  .related-kicker {
+    display: block;
+    margin-bottom: 8px;
+    font-size: 0.78rem;
+    letter-spacing: 0.16em;
+    text-transform: uppercase;
+    color: #79a5ff;
+    font-weight: 700;
+  }
+  .related-card strong {
+    display: block;
+    margin-bottom: 8px;
+  }
+  .related-card span {
+    color: var(--muted);
+    font-size: 0.95rem;
+  }
+  .lightbox-overlay {
+    position: fixed;
+    inset: 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 24px;
+    background: rgba(0, 0, 0, 0.75);
+    opacity: 0;
+    pointer-events: none;
+    transition: opacity 0.2s ease;
+    z-index: 9999;
+  }
+  .lightbox-overlay.is-open {
+    opacity: 1;
+    pointer-events: auto;
+  }
+  .lightbox-img {
+    max-width: min(99vw, 1800px);
+    max-height: 96vh;
+    border-radius: var(--radius);
+    box-shadow: 0 0 140px rgba(45, 134, 89, 0.45), 0 0 320px rgba(45, 134, 89, 0.25), 0 8px 30px rgba(0, 0, 0, 0.6);
+  }
+  @media (max-width: 820px) {
+    .hero-layout {
+      grid-template-columns: 1fr;
+    }
+    .hero-cards {
+      grid-template-columns: 1fr;
+    }
+  }
+</style>
+</head>
+<body>
+<div class="post-content">
+<a class="back-link" href="../index.html">&larr; Back to home</a>
+<header class="post-header">
+<div class="post-meta">
+<time datetime="2026-04-09">April 9, 2026</time>
+</div>
+<h1>The Founder Loop Is Real: Promptomat, Heatstack, and Visible Progress</h1>
+</header>
+<article>
+<p><span data-post-topic></span> <span data-post-project></span><br/>
+<span data-post-tags></span></p>
+
+<p>Today felt different because the work stopped looking like isolated wins and started reading like one connected system.</p>
+<p>Promptomat can now turn real repo progress into a founder story, open the writing lane, hand that work into VS Code through the companion, and carry honest state back into the app. At the same time, Heatstack pushed through a much bigger visual breakthrough, and FlyingGame kept its own momentum visible instead of disappearing behind tooling work.</p>
+
+<div class="app-strip">
+  <div class="app-chip">
+    <img src="media/founder-loop/promptomat-icon.png" alt="Promptomat app icon"/>
+    <div>
+      <strong>Promptomat</strong>
+      <span>Dashboard, checklist validation, founder handoff, and companion pickup.</span>
+    </div>
+  </div>
+  <div class="app-chip">
+    <img src="media/founder-loop/heatstack-icon.png" alt="Heatstack app icon"/>
+    <div>
+      <strong>Heatstack</strong>
+      <span>Timeline-led views, heat surfaces, and the stock breakthrough we can finally show.</span>
+    </div>
+  </div>
+  <div class="app-chip">
+    <div class="emoji-icon" aria-hidden="true">FG</div>
+    <div>
+      <strong>FlyingGame</strong>
+      <span>Still part of the same story through visible game progress and the current video proof.</span>
+    </div>
+  </div>
+</div>
+
+<blockquote>
+The central takeaway is simple: the plan held, bounded side lanes ran in parallel, and the main lane never had to stop shipping.
+</blockquote>
+
+<h2>The New Founder Loop</h2>
+<p>We have talked before about planning, implementation, and AI support. What changed now is that these pieces finally connect into one visible loop:</p>
+<ol>
+  <li>Promptomat reads project momentum instead of relying only on memory.</li>
+  <li>The dashboard shows what changed since the last public update.</li>
+  <li>The founder can turn that snapshot directly into a blog-writing run.</li>
+  <li>The VS Code companion mirrors the active task instead of acting like a disconnected helper.</li>
+  <li>The run comes back with honest readback, so the app reflects what actually happened.</li>
+</ol>
+<p>That is important because it changes the feeling of the work. It is no longer just "we built some features." It is "we can show the work, pick it up, and keep moving without rebuilding context every time."</p>
+
+<figure class="post-image">
+  <img src="p9_pmt.jpg" alt="Promptomat in front of VS Code with the companion extension visible, showing workflow, dashboard, and worker context together."/>
+  <figcaption>The founder-loop hero shot: VS Code stays visible as the execution shell while Promptomat shows workflow selection, worker setup, dashboard context, and the live desk connection in one frame.</figcaption>
+</figure>
+<p class="icon-note">This ended up being the right lead image because it proves the real loop in one shot: extension installed, companion visible, run context visible, and Promptomat clearly in charge of the workflow.</p>
+
+<h2>Heatstack Became a Better Story Surface</h2>
+<p>The Heatstack breakthrough matters for two reasons. First, the UI itself got much stronger. Second, it gave us a better visual language for the founder demo.</p>
+<p>The selected-group overview and heat-view direction feel like real product surfaces now: dark shell, strong central chart, readable side structure, and a compact summary-to-detail relationship that makes the screen easy to scan.</p>
+
+<figure class="post-image">
+  <img src="p9_stckGrpSel.jpg" alt="Heatstack selected-group overview showing the Tech Core portfolio group with multiple holdings plotted in one timeline-led view."/>
+  <figcaption>Heatstack's selected-group view became the stronger proof image: one clear group focus, readable side rail, and a chart surface that tells the product story faster than a busier collage.</figcaption>
+</figure>
+
+<p>That same structure is exactly what made the Promptomat hero direction click for us. We do not want a busy desktop collage. We want a selected run, a readable rail, and one dominant center surface that proves what the system is doing.</p>
+
+<h2>Promptomat Is Finally Showing the Work, Not Just Managing It</h2>
+<p>Promptomat took a big step here too. The dashboard can now show "since last post" progress across real projects, compact cards can expand into richer detail, and the founder story can jump directly into Evergreen Blog without a manual copy-paste ritual.</p>
+<p>That matters because the dashboard, checklist, and companion no longer feel like separate utilities. They feel like one operating loop:</p>
+<ul>
+  <li>the dashboard shows what changed,</li>
+  <li>the checklist validates the demo path,</li>
+  <li>the companion picks up the run where execution actually happens.</li>
+</ul>
+
+<figure class="post-image">
+  <img src="p9_pmt_checklist.jpg" alt="Promptomat implementation checklist view used to validate the founder demo flow and capture live findings."/>
+  <figcaption>The checklist matters because it keeps the founder demo honest. This is not just a pretty dashboard; it is a real validation surface where rough edges are recorded, retested, and kept visible until they are resolved.</figcaption>
+</figure>
+
+<h2>FlyingGame Still Belongs in This Story</h2>
+<p>One trap in tooling-heavy weeks is that the product work disappears from the narrative. We do not want that. FlyingGame stays in the founder story because it proves we are not just polishing our own process in isolation.</p>
+<p>The current plan is to use the existing FlyingGame teaser as the third proof artifact for now, then follow it with a bigger dedicated FlyingGame post once the next milestone is ready. That keeps game progress visible without pretending the older clip is the full current story.</p>
+
+<div class="video-embed">
+  <iframe
+    class="video-frame"
+    src="https://www.youtube.com/embed/wPsrf4RKovg"
+    title="FlyingGame teaser video"
+    loading="lazy"
+    allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+    allowfullscreen></iframe>
+  <div class="video-caption">The current FlyingGame teaser is older than the next dedicated focus post, but it still belongs here as proof that the product lane kept moving while the tooling loop got stronger.</div>
+</div>
+<p>That matters because the teaser is not being used as a random extra. It closes the loop. Promptomat shows the workflow. Heatstack shows the visual breakthrough. FlyingGame proves the actual product lane still shipped while the system around it improved.</p>
+
+<h2>Why This Feels Like a Breakthrough</h2>
+<p>The breakthrough is not that any one panel exists. It is that the system now supports a better founder rhythm:</p>
+<ul>
+  <li>plan clearly,</li>
+  <li>delegate simple bounded work,</li>
+  <li>keep the main lane moving,</li>
+  <li>integrate the results,</li>
+  <li>show the progress honestly.</li>
+</ul>
+<p>That is what we want to keep pushing. Less stop-start context rebuild. More visible momentum. More products that can explain themselves because the work trail is already structured.</p>
+
+<p>This post is the first time we can show that loop with real surfaces: Promptomat in front, Heatstack as a proof-heavy companion story, and FlyingGame still visible as the product lane that keeps us honest.</p>
+
+<section class="related-posts">
+  <h2>Related Posts</h2>
+  <p>This founder checkpoint sits on top of other project stories. If you want the direct lead-up from the individual lanes, these are the most relevant follow-ups and companion reads:</p>
+  <div class="related-grid">
+    <a class="related-card" href="promptomat-growth-engine.html">
+      <span class="related-kicker">Promptomat</span>
+      <strong>Growing Up Fast: What Changed in Promptomat Over the Last 3 Days</strong>
+      <span>The earlier Promptomat product/dev loop write-up that this founder post now builds on.</span>
+    </a>
+    <a class="related-card" href="stocktool-part2.html">
+      <span class="related-kicker">Heatstack / StockTool</span>
+      <strong>StockTool, Part II: From Prototype to Contract-Driven Evolution</strong>
+      <span>The earlier stock-surface evolution story before the newer Heatstack-style breakthrough direction.</span>
+    </a>
+    <a class="related-card" href="flyinggame-stabilization-and-first-true-dogfight-loop.html">
+      <span class="related-kicker">FlyingGame</span>
+      <strong>FlyingGame Stabilization Day: Our First True Dogfight Loop</strong>
+      <span>The strongest current game-progress companion post behind the teaser embedded above.</span>
+    </a>
+    <a class="related-card" href="mojibake-encoding-nightmare.html">
+      <span class="related-kicker">AI-Experiment</span>
+      <strong>The Encoding Ghost in the Machine: Mojibake and the Slow Death of Good Text</strong>
+      <span>A related tooling nightmare from the same stretch of work, where content corruption became part of the story too.</span>
+    </a>
+  </div>
+</section>
+</article>
+<a class="back-link" href="../index.html">&larr; Back to home</a>
+</div>
+<footer class="site-footer">
+<div class="container">
+<p>
+<a href="../index.html">Home</a> &bull;
+<a href="https://github.com/evergreenGaming">GitHub</a> &bull;
+<a href="https://github.com/evergreenGaming/AIhelpers">AI Helpers</a>
+</p>
+<p style="margin-top: 16px; font-size: 0.85rem;">
+<strong>Impressum</strong><br/>
+Moritz Meyers &bull; <a href="https://github.com/evergreenGaming">Contact via GitHub</a>
+</p>
+</div>
+</footer>
+<script>
+  (function(){
+    const overlay = document.createElement('div');
+    overlay.className = 'lightbox-overlay';
+    overlay.innerHTML = '<img class="lightbox-img" alt="Expanded image" />';
+    const imgEl = overlay.querySelector('img');
+    document.body.appendChild(overlay);
+
+    const open = (src, alt) => {
+      imgEl.src = src;
+      imgEl.alt = alt || 'Expanded image';
+      overlay.classList.add('is-open');
+      document.body.style.overflow = 'hidden';
+    };
+
+    const close = () => {
+      overlay.classList.remove('is-open');
+      imgEl.src = '';
+      document.body.style.overflow = '';
+    };
+
+    overlay.addEventListener('click', (event) => {
+      if (event.target === overlay) {
+        close();
+      }
+    });
+
+    document.addEventListener('keydown', (event) => {
+      if (event.key === 'Escape') {
+        close();
+      }
+    });
+
+    document.querySelectorAll('.post-image img').forEach((img) => {
+      img.addEventListener('click', () => open(img.src, img.alt));
+    });
+  })();
+</script>
+</body>
+</html>
+

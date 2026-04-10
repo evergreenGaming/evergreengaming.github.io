@@ -1,4 +1,4 @@
-<!DOCTYPE html>
+﻿<!DOCTYPE html>
 
 <html lang="en">
 <head>
@@ -9,15 +9,16 @@
 <link href="style.css" rel="stylesheet"/>
 <link href="feed.xml" rel="alternate" title="Evergreen Gaming Dev Blog" type="application/atom+xml"/>
 <script src="tags-config.js"></script>
+<script src="portkey.js"></script>
 </head>
 <body>
 <header class="site-header">
 <div class="container">
 <h1 class="site-title">Evergreen Gaming</h1>
 <p class="site-tagline">
-<span aria-label="Gaming icon" class="icon-control icon-gaming" data-icon-role="gaming" role="button" tabindex="0" title="Gaming icon settings">🎮</span>
+<span aria-label="Gaming icon" class="icon-control icon-gaming" data-icon-role="gaming" role="button" tabindex="0" title="Gaming icon settings">&#127918;</span>
 <span class="tagline-text">Game development powered by AI Collaboration.</span>
-<span aria-label="Robot icon" class="icon-control icon-robot" data-icon-role="robot" role="button" tabindex="0" title="Robot icon settings">🤖</span>
+<span aria-label="Robot icon" class="icon-control icon-robot" data-icon-role="robot" role="button" tabindex="0" title="Robot icon settings">&#129302;</span>
 </p>
 </div>
 </header>
@@ -25,7 +26,7 @@
 <nav aria-label="Post filters" class="filter-bar">
   <div class="container filter-inner">
     <div aria-label="Sticky gaming icon" class="sticky-icons sticky-icons-left" role="group">
-      <span aria-label="Gaming icon" class="icon-control icon-gaming" data-icon-role="gaming" role="button" tabindex="0" title="Gaming icon settings">🎮</span>
+      <span aria-label="Gaming icon" class="icon-control icon-gaming" data-icon-role="gaming" role="button" tabindex="0" title="Gaming icon settings">&#127918;</span>
     </div>
 
     <div class="filter-controls">
@@ -40,12 +41,15 @@
         </select>
       </div>
       <div class="filter-group">
-        <button id="subscribe-btn" class="subscribe-button" aria-label="Subscribe for updates">📬 Subscribe</button>
+        <button id="subscribe-btn" class="subscribe-button" aria-label="Subscribe for updates">&#128236; Subscribe</button>
+      </div>
+      <div class="filter-group">
+        <button id="private-top-lock" class="private-top-button" type="button" hidden>Lock Browser</button>
       </div>
     </div>
 
     <div aria-label="Sticky robot icon" class="sticky-icons sticky-icons-right" role="group">
-      <span aria-label="Robot icon" class="icon-control icon-robot" data-icon-role="robot" role="button" tabindex="0" title="Robot icon settings">🤖</span>
+      <span aria-label="Robot icon" class="icon-control icon-robot" data-icon-role="robot" role="button" tabindex="0" title="Robot icon settings">&#129302;</span>
     </div>
   </div>
 </nav>
@@ -53,7 +57,7 @@
 <div aria-hidden="true" class="icon-settings-panel" id="icon-settings-panel">
   <div class="settings-header">
     <strong id="settings-title">Icon Settings</strong>
-    <button aria-label="Close settings" id="settings-close" type="button">✕</button>
+    <button aria-label="Close settings" id="settings-close" type="button">&#10005;</button>
   </div>
   <div class="settings-body">
     <label for="setting-random-min">Random delay min (s)</label>
@@ -78,7 +82,7 @@
 <h2>About</h2>
 <p>
         Evergreen Gaming is a structured public lab notebook documenting private projects,
-        tools, and experiments — built with extensive AI collaboration. It serves as both
+        tools, and experiments &mdash; built with extensive AI collaboration. It serves as both
         a development log and a living portfolio of real work in progress.
       </p>
 <p>
@@ -94,9 +98,63 @@
       </p>
 </section>
 
+<section class="private-gate" id="private-gate" hidden>
+<div class="private-gate-eyebrow">PortKey Access</div>
+<h2>Private founder/applications view</h2>
+<p>We value privacy and are sharing the project archive only with selected people while the apps are still evolving. If you have a PortKey link or invite phrase, unlock the private view here.</p>
+<form class="private-gate-form" id="private-gate-form">
+<input id="private-gate-key" type="password" autocomplete="one-time-code" placeholder="Paste PortKey invite" aria-label="PortKey invite"/>
+<button class="read-more" type="submit">Unlock private posts</button>
+</form>
+<div class="private-gate-actions">
+<button class="read-more" id="private-gate-clear" type="button" hidden>Lock this browser again</button>
+</div>
+<div class="private-gate-status" id="private-gate-status"></div>
+</section>
+
 <section class="posts" id="posts">
 <h2>Recent Posts</h2>
 
+<!-- Mojibake Encoding Nightmare -->
+<article class="post-card" data-project="ai-experiment" data-project-label="AI-Experiment" data-tags="meta,workflow,tools,web" data-topic="meta" data-topic-label="&#129504; Meta">
+<div class="post-meta">
+<time datetime="2026-04-10">April 10, 2026</time>
+<span class="group-tags"></span>
+</div>
+<h3 class="post-title">
+<a href="posts/mojibake-encoding-nightmare.html">
+            The Encoding Ghost in the Machine: Mojibake and the Slow Death of Good Text
+          </a>
+</h3>
+<p class="post-excerpt">
+          A draft about the encoding nightmare that can start with one broken emoji and then keep spreading into surrounding text, plans, labels, and code-adjacent content across projects.
+        </p>
+<div class="post-footer">
+<a class="read-more" href="posts/mojibake-encoding-nightmare.html">Read more &rarr;</a>
+<p class="post-excerpt post-meta2">&#129504; meta &bull; &#9881;&#65039; workflow &bull; &#129520; tools &bull; &#127760; web</p>
+</div>
+</article>
+
+<!-- Founder Loop Progress Story -->
+<article class="post-card" data-project="promptomat" data-project-label="Promptomat" data-tags="meta,workflow,tools,ui,product,timeline,finance,gaming" data-topic="meta" data-topic-label="&#129504; Meta">
+<div class="post-meta">
+<time datetime="2026-04-09">April 9, 2026</time>
+<span class="group-tags"></span>
+</div>
+<h3 class="post-title">
+<a href="posts/founder-loop-progress-story.html">
+            The Founder Loop Is Real: Promptomat, Heatstack, and Visible Progress
+          </a>
+</h3>
+<p class="post-excerpt">
+          A founder-story checkpoint tying together Promptomat dashboard progress, the VS Code companion loop,
+          Heatstack's breakout visual direction, and FlyingGame momentum into one visible proof surface.
+        </p>
+<div class="post-footer">
+<a class="read-more" href="posts/founder-loop-progress-story.html">Read more &rarr;</a>
+<p class="post-excerpt post-meta2">&#129504; meta &bull; &#9881;&#65039; workflow &bull; &#129520; tools &bull; &#129513; ui &bull; &#129533; product &bull; &#128200; timeline &bull; &#128200; finance &bull; &#127918; gaming</p>
+</div>
+</article>
 
 <!-- Promptomat Part IV -->
 <article class="post-card" data-project="promptomat" data-project-label="Promptomat" data-tags="meta,workflow,tools,ui,product,art" data-topic="meta" data-topic-label="🧠 Meta">
@@ -119,9 +177,8 @@
 </div>
 </article>
 
-
 <!-- FlyingGame Stabilization Day -->
-<article class="post-card" data-project="flyinggame" data-project-label="FlyingGame" data-tags="gaming,devlog,workflow,meta" data-topic="gaming" data-topic-label="🎮 Gaming">
+<article class="post-card" data-project="flyinggame" data-project-label="FlyingGame" data-tags="gaming,devlog,workflow,meta" data-topic="gaming" data-topic-label="&#127918; Gaming">
 <div class="post-meta">
 <time datetime="2026-03-08">March 8, 2026</time>
 <span class="group-tags"></span>
@@ -136,13 +193,13 @@
           to trust tuning again, with shield/hull behavior and combat feedback finally behaving as intended.
         </p>
 <div class="post-footer">
-<div class="post-actions"><a class="read-more" href="posts/flyinggame-stabilization-and-first-true-dogfight-loop.html">Read more →</a><a class="series-bubble" href="posts/flyinggame-12h-sprint-report.html" title="Previous in series">← Previous: Part 3</a></div>
-<p class="post-excerpt post-meta2">🎮 gaming • 📝 devlog • ⚙️ workflow • 🧠 meta</p>
+<div class="post-actions"><a class="read-more" href="posts/flyinggame-stabilization-and-first-true-dogfight-loop.html">Read more &rarr;</a><a class="series-bubble" href="posts/flyinggame-12h-sprint-report.html" title="Previous in series">&larr; Previous: Part 3</a></div>
+<p class="post-excerpt post-meta2">&#127918; gaming &bull; &#128221; devlog &bull; &#9881;&#65039; workflow &bull; &#129504; meta</p>
 </div>
 </article>
 
 <!-- FlyingGame Friday Night Sprint Report -->
-<article class="post-card" data-project="flyinggame" data-project-label="FlyingGame" data-tags="gaming,devlog,workflow,meta" data-topic="gaming" data-topic-label="🎮 Gaming">
+<article class="post-card" data-project="flyinggame" data-project-label="FlyingGame" data-tags="gaming,devlog,workflow,meta" data-topic="gaming" data-topic-label="&#127918; Gaming">
 <div class="post-meta">
 <time datetime="2026-03-07">March 7, 2026</time>
 <span class="group-tags"></span>
@@ -157,13 +214,13 @@
           with almost zero hard blockers and a much tighter human+AI execution loop.
         </p>
 <div class="post-footer">
-<div class="post-actions"><a class="read-more" href="posts/flyinggame-12h-sprint-report.html">Read more →</a><a class="series-bubble" href="posts/flyinggame-multiplayer-combat-breakthrough.html" title="Previous in series">← Previous: Part 2</a><a class="series-bubble" href="posts/flyinggame-stabilization-and-first-true-dogfight-loop.html" title="Next in series">Next: Part 4 →</a></div>
-<p class="post-excerpt post-meta2">🎮 gaming • 📝 devlog • ⚙️ workflow • 🧠 meta</p>
+<div class="post-actions"><a class="read-more" href="posts/flyinggame-12h-sprint-report.html">Read more &rarr;</a><a class="series-bubble" href="posts/flyinggame-multiplayer-combat-breakthrough.html" title="Previous in series">&larr; Previous: Part 2</a><a class="series-bubble" href="posts/flyinggame-stabilization-and-first-true-dogfight-loop.html" title="Next in series">Next: Part 4 &rarr;</a></div>
+<p class="post-excerpt post-meta2">&#127918; gaming &bull; &#128221; devlog &bull; &#9881;&#65039; workflow &bull; &#129504; meta</p>
 </div>
 </article>
 
 <!-- FlyingGame Multiplayer Follow-Up -->
-<article class="post-card" data-project="flyinggame" data-project-label="FlyingGame" data-tags="gaming,devlog,workflow,multiplayer" data-topic="gaming" data-topic-label="🎮 Gaming">
+<article class="post-card" data-project="flyinggame" data-project-label="FlyingGame" data-tags="gaming,devlog,workflow,multiplayer" data-topic="gaming" data-topic-label="&#127918; Gaming">
 <div class="post-meta">
 <time datetime="2026-03-07">March 7, 2026</time>
 <span class="group-tags"></span>
@@ -178,13 +235,13 @@
           and remaining work is focused on cosmetic missile visibility replication.
         </p>
 <div class="post-footer">
-<div class="post-actions"><a class="read-more" href="posts/flyinggame-multiplayer-combat-breakthrough.html">Read more →</a><a class="series-bubble" href="posts/flyinggame-contract-driven-execution.html" title="Previous in series">← Previous: Contract-Driven Execution</a></div>
-<p class="post-excerpt post-meta2">🎮 gaming • 📝 devlog • ⚙️ workflow • 🌐 multiplayer</p>
+<div class="post-actions"><a class="read-more" href="posts/flyinggame-multiplayer-combat-breakthrough.html">Read more &rarr;</a><a class="series-bubble" href="posts/flyinggame-contract-driven-execution.html" title="Previous in series">&larr; Previous: Contract-Driven Execution</a></div>
+<p class="post-excerpt post-meta2">&#127918; gaming &bull; &#128221; devlog &bull; &#9881;&#65039; workflow &bull; &#127760; multiplayer</p>
 </div>
 </article>
 
 <!-- Promptomat Part III -->
-<article class="post-card" data-project="promptomat" data-project-label="Promptomat" data-tags="meta,workflow,tools,ui,product" data-topic="meta" data-topic-label="🧠 Meta">
+<article class="post-card" data-project="promptomat" data-project-label="Promptomat" data-tags="meta,workflow,tools,ui,product" data-topic="meta" data-topic-label="&#129504; Meta">
 <div class="post-meta">
 <time datetime="2026-03-05">March 5, 2026</time>
 <span class="group-tags"></span>
@@ -206,7 +263,7 @@
 </article>
 
 <!-- FlyingGame Deep Moment -->
-<article class="post-card" data-project="flyinggame" data-project-label="FlyingGame" data-tags="gaming,workflow,devlog,meta" data-topic="gaming" data-topic-label="🎮 Gaming">
+<article class="post-card" data-project="flyinggame" data-project-label="FlyingGame" data-tags="gaming,workflow,devlog,meta" data-topic="gaming" data-topic-label="&#127918; Gaming">
 <div class="post-meta">
 <time datetime="2026-03-04">March 4, 2026</time>
 <span class="group-tags"></span>
@@ -220,13 +277,13 @@
           A deep workflow milestone in flyingGame: detailed implementation docs, execution tracking, strict requirements, and a 7-step test plan with acceptance criteria that enabled high quality early.
         </p>
 <div class="post-footer">
-<a class="read-more" href="posts/flyinggame-contract-driven-execution.html">Read more →</a>
-<p class="post-excerpt post-meta2">🎮 gaming • ⚙️ workflow • 📝 devlog • 🧠 meta</p>
+<a class="read-more" href="posts/flyinggame-contract-driven-execution.html">Read more &rarr;</a>
+<p class="post-excerpt post-meta2">&#127918; gaming &bull; &#9881;&#65039; workflow &bull; &#128221; devlog &bull; &#129504; meta</p>
 </div>
 </article>
 
 <!-- StockTool Part II -->
-<article class="post-card" data-project="stocktool" data-project-label="StockTool" data-tags="finance,ui,tools,workflow" data-topic="experiments" data-topic-label="🛠️ Experiments">
+<article class="post-card" data-project="stocktool" data-project-label="StockTool" data-tags="finance,ui,tools,workflow" data-topic="experiments" data-topic-label="&#128736;&#65039; Experiments">
 <div class="post-meta">
 <time datetime="2026-03-01">March 1, 2026</time>
 <span class="group-tags"></span>
@@ -241,13 +298,13 @@
           stronger graph context, and tighter requirement-to-implementation sync.
         </p>
 <div class="post-footer">
-<a class="read-more" href="posts/stocktool-part2.html">Read more →</a>
-<p class="post-excerpt post-meta2">🛠️ experiments • 📈 finance • 🧩 ui • 🧰 tools • ⚙️ workflow</p>
+<a class="read-more" href="posts/stocktool-part2.html">Read more &rarr;</a>
+<p class="post-excerpt post-meta2">&#128736;&#65039; experiments &bull; &#128200; finance &bull; &#129513; ui &bull; &#129520; tools &bull; &#9881;&#65039; workflow</p>
 </div>
 </article>
 
 <!-- Codex Session Workflow -->
-<article class="post-card" data-project="ai-experiment" data-project-label="AI-Experiment" data-tags="meta,workflow,tools,web" data-topic="meta" data-topic-label="🧠 Meta">
+<article class="post-card" data-project="ai-experiment" data-project-label="AI-Experiment" data-tags="meta,workflow,tools,web" data-topic="meta" data-topic-label="&#129504; Meta">
 <div class="post-meta">
 <time datetime="2026-02-28">February 28, 2026</time>
 <span class="group-tags"></span>
@@ -262,12 +319,12 @@
           and PR-first collaboration into one recursive development loop that improves with each iteration.
         </p>
 <div class="post-footer">
-<a class="read-more" href="posts/codex-session-workflow.html">Read more →</a>
-<p class="post-excerpt post-meta2">🧠 meta • ⚙️ workflow • 🧰 tools • 🌐 web</p>
+<a class="read-more" href="posts/codex-session-workflow.html">Read more &rarr;</a>
+<p class="post-excerpt post-meta2">&#129504; meta &bull; &#9881;&#65039; workflow &bull; &#129520; tools &bull; &#127760; web</p>
 </div>
 </article>
 <!-- Promptomat Evolution -->
-<article class="post-card" data-project="promptomat" data-project-label="Promptomat" data-tags="meta,workflow,tools,product" data-topic="meta" data-topic-label="🧠 Meta">
+<article class="post-card" data-project="promptomat" data-project-label="Promptomat" data-tags="meta,workflow,tools,product" data-topic="meta" data-topic-label="&#129504; Meta">
 <div class="post-meta">
 <time datetime="2026-02-27">February 27, 2026</time>
 <span class="group-tags"></span>
@@ -280,15 +337,15 @@
 <p class="post-excerpt">
           Five days after the initial prototype, Promptomat evolved into a production-ready workflow system
           with multi-step execution, history management, and theme customization. A look at what changed,
-          what was learned, and how a simple tool became recursive — helping build itself.
+          what was learned, and how a simple tool became recursive &mdash; helping build itself.
         </p>
 <div class="post-footer">
-<div class="post-actions"><a class="read-more" href="posts/promptomat-evolution.html">Read more →</a><a class="series-bubble" href="posts/promptomat-creation.html" title="Previous in series">← Previous: Part 1</a><a class="series-bubble" href="posts/promptomat-growth-engine.html" title="Next in series">Next: Part 3 →</a></div>
-<p class="post-excerpt post-meta2">🧠 meta • ⚙️ workflow • 🧰 tools • 🧭 product</p>
+<div class="post-actions"><a class="read-more" href="posts/promptomat-evolution.html">Read more &rarr;</a><a class="series-bubble" href="posts/promptomat-creation.html" title="Previous in series">&larr; Previous: Part 1</a><a class="series-bubble" href="posts/promptomat-growth-engine.html" title="Next in series">Next: Part 3 &rarr;</a></div>
+<p class="post-excerpt post-meta2">&#129504; meta &bull; &#9881;&#65039; workflow &bull; &#129520; tools &bull; &#129533; product</p>
 </div>
 </article>
 <!-- AI to the Rescue -->
-<article class="post-card" data-project="ai-experiment" data-project-label="AI-Experiment" data-tags="meta,communication,workflow,frustration" data-topic="meta" data-topic-label="🧠 Meta">
+<article class="post-card" data-project="ai-experiment" data-project-label="AI-Experiment" data-tags="meta,communication,workflow,frustration" data-topic="meta" data-topic-label="&#129504; Meta">
 <div class="post-meta">
 <time datetime="2026-02-25">February 25, 2026</time>
 <span class="group-tags"></span>
@@ -299,22 +356,22 @@
           </a>
 </h3>
 <p class="post-excerpt">
-          How AI can help when you’re stuck repeating the same technical explanation in any team or project chat. A real-world experiment in using AI to summarize and clarify, saving time and sanity.
+          How AI can help when you're stuck repeating the same technical explanation in any team or project chat. A real-world experiment in using AI to summarize and clarify, saving time and sanity.
         </p>
 <div class="post-footer">
-<a class="read-more" href="posts/ai-to-the-rescue.html">Read more →</a>
-<p class="post-excerpt post-meta2">� meta • 🗨️ communication • ⚙️ workflow • 😤 frustration</p>
+<a class="read-more" href="posts/ai-to-the-rescue.html">Read more &rarr;</a>
+<p class="post-excerpt post-meta2">&#129504; meta &bull; &#128488;&#65039; communication &bull; &#9881;&#65039; workflow &bull; &#128548; frustration</p>
 </div>
 </article>
 <!-- Portfolio Journey -->
-<article class="post-card" data-project="ai-experiment" data-project-label="AI-Experiment" data-tags="meta,web,tools,product,timeline,tech-art,portfolio" data-topic="meta" data-topic-label="🧠 Meta">
+<article class="post-card" data-project="ai-experiment" data-project-label="AI-Experiment" data-tags="meta,web,tools,product,timeline,tech-art,portfolio" data-topic="meta" data-topic-label="&#129504; Meta">
 <div class="post-meta">
 <time datetime="2026-02-23">February 23, 2026</time>
 <span class="group-tags"></span>
 </div>
 <h3 class="post-title">
 <a href="posts/portfolio-journey.html">
-            From Prototype to Portfolio: A Scroll‑Timeline Journey (and a Happy Accident)
+            From Prototype to Portfolio: A Scroll-Timeline Journey (and a Happy Accident)
           </a>
 </h3>
 <p class="post-excerpt">
@@ -323,12 +380,12 @@
           the concept with real content early.
         </p>
 <div class="post-footer">
-<a class="read-more" href="posts/portfolio-journey.html">Read more →</a>
-<p class="post-excerpt post-meta2">� meta • 🧭 product • 🌐 web • 🧰 tools • 📈 timeline • 🎨 tech-art • 🗂️ portfolio</p>
+<a class="read-more" href="posts/portfolio-journey.html">Read more &rarr;</a>
+<p class="post-excerpt post-meta2">&#129504; meta &bull; &#129533; product &bull; &#127760; web &bull; &#129520; tools &bull; &#128200; timeline &bull; &#127912; tech-art &bull; &#128194; portfolio</p>
 </div>
 </article>
 <!-- ModelEditor -->
-<article class="post-card" data-project="modeleditor" data-project-label="ModelEditor" data-tags="graphics,web,tools" data-topic="experiments" data-topic-label="🛠️ Experiments">
+<article class="post-card" data-project="modeleditor" data-project-label="ModelEditor" data-tags="graphics,web,tools" data-topic="experiments" data-topic-label="&#128736;&#65039; Experiments">
 <div class="post-meta">
 <time datetime="2026-02-13">February 13, 2026</time>
 <span class="group-tags"></span>
@@ -344,12 +401,12 @@
           how small prototypes can grow into capable systems when development friction is minimal.
         </p>
 <div class="post-footer">
-<a class="read-more" href="posts/modeleditor-webgl-experiment.html">Read more →</a>
-<p class="post-excerpt post-meta2">🛠️ experiments • 🖥️ graphics • 🌐 web • 🧰 tools • 🎮 gaming</p>
+<a class="read-more" href="posts/modeleditor-webgl-experiment.html">Read more &rarr;</a>
+<p class="post-excerpt post-meta2">&#128736;&#65039; experiments &bull; &#128421;&#65039; graphics &bull; &#127760; web &bull; &#129520; tools &bull; &#127918; gaming</p>
 </div>
 </article>
 <!-- Blogging with AI -->
-<article class="post-card" data-project="ai-experiment" data-project-label="AI-Experiment" data-tags="meta,workflow" data-topic="meta" data-topic-label="🧠 Meta">
+<article class="post-card" data-project="ai-experiment" data-project-label="AI-Experiment" data-tags="meta,workflow" data-topic="meta" data-topic-label="&#129504; Meta">
 <div class="post-meta">
 <time datetime="2026-02-21">February 21, 2026</time>
 <span class="group-tags"></span>
@@ -365,12 +422,12 @@
           reducing friction so progress can be captured continuously.
         </p>
 <div class="post-footer">
-<a class="read-more" href="posts/blogging-with-ai.html">Read more →</a>
-<p class="post-excerpt post-meta2">� meta • ⚙️ workflow</p>
+<a class="read-more" href="posts/blogging-with-ai.html">Read more &rarr;</a>
+<p class="post-excerpt post-meta2">&#129504; meta &bull; &#9881;&#65039; workflow</p>
 </div>
 </article>
 <!-- StockTool -->
-<article class="post-card" data-project="stocktool" data-project-label="StockTool" data-tags="finance,ui,tools" data-topic="experiments" data-topic-label="🛠️ Experiments">
+<article class="post-card" data-project="stocktool" data-project-label="StockTool" data-tags="finance,ui,tools" data-topic="experiments" data-topic-label="&#128736;&#65039; Experiments">
 <div class="post-meta">
 <time datetime="2026-02-22">February 22, 2026</time>
 <span class="group-tags"></span>
@@ -386,11 +443,11 @@
           and representing investments the way people actually think about them.
         </p>
 <div class="post-footer">
-<a class="read-more" href="posts/stocktool-experiment.html">Read more →</a>
-<p class="post-excerpt post-meta2">🛠️ experiments • 📈 finance • 🧩 ui • 🧰 tools • 🎮 gaming</p>
+<a class="read-more" href="posts/stocktool-experiment.html">Read more &rarr;</a>
+<p class="post-excerpt post-meta2">&#128736;&#65039; experiments &bull; &#128200; finance &bull; &#129513; ui &bull; &#129520; tools &bull; &#127918; gaming</p>
 </div>
 </article>
-<article class="post-card" data-project="asset-viewer" data-project-label="Asset Viewer" data-tags="tools,graphics,workflow,gaming" data-topic="gaming" data-topic-label="🎮 Gaming">
+<article class="post-card" data-project="asset-viewer" data-project-label="Asset Viewer" data-tags="tools,graphics,workflow,gaming" data-topic="gaming" data-topic-label="&#127918; Gaming">
 <div class="post-meta">
 <time datetime="2026-02-21">February 21, 2026</time>
 <span class="group-tags"></span>
@@ -406,11 +463,11 @@
           leverage existing documentation as a single source of truth.
         </p>
 <div class="post-footer">
-<div class="post-actions"><a class="read-more" href="posts/assetviewer-part1.html">Read more →</a><a class="series-bubble" href="posts/assetviewer-part2.html" title="Next in series">Next: Part 2 →</a></div>
-<p class="post-excerpt post-meta2">🎮 gaming • 🖥️ graphics • ⚙️ workflow • 🧰 tools</p>
+<div class="post-actions"><a class="read-more" href="posts/assetviewer-part1.html">Read more &rarr;</a><a class="series-bubble" href="posts/assetviewer-part2.html" title="Next in series">Next: Part 2 &rarr;</a></div>
+<p class="post-excerpt post-meta2">&#127918; gaming &bull; &#128421;&#65039; graphics &bull; &#9881;&#65039; workflow &bull; &#129520; tools</p>
 </div>
 </article>
-<article class="post-card" data-project="asset-viewer" data-project-label="Asset Viewer" data-tags="tools,graphics,workflow,gaming" data-topic="gaming" data-topic-label="🎮 Gaming">
+<article class="post-card" data-project="asset-viewer" data-project-label="Asset Viewer" data-tags="tools,graphics,workflow,gaming" data-topic="gaming" data-topic-label="&#127918; Gaming">
 <div class="post-meta">
 <time datetime="2026-02-22">February 22, 2026</time>
 <span class="group-tags"></span>
@@ -426,12 +483,12 @@
           without preprocessing.
         </p>
 <div class="post-footer">
-<div class="post-actions"><a class="read-more" href="posts/assetviewer-part2.html">Read more →</a><a class="series-bubble" href="posts/assetviewer-part1.html" title="Previous in series">← Previous: Part 1</a></div>
-<p class="post-excerpt post-meta2">🎮 gaming • 🖥️ graphics • ⚙️ workflow • 🧰 tools</p>
+<div class="post-actions"><a class="read-more" href="posts/assetviewer-part2.html">Read more &rarr;</a><a class="series-bubble" href="posts/assetviewer-part1.html" title="Previous in series">&larr; Previous: Part 1</a></div>
+<p class="post-excerpt post-meta2">&#127918; gaming &bull; &#128421;&#65039; graphics &bull; &#9881;&#65039; workflow &bull; &#129520; tools</p>
 </div>
 </article>
 <!-- Welcome / Promptomat -->
-<article class="post-card" data-project="promptomat" data-project-label="Promptomat" data-tags="meta,workflow,tools" data-topic="welcome" data-topic-label="👋 Welcome">
+<article class="post-card" data-project="promptomat" data-project-label="Promptomat" data-tags="meta,workflow,tools" data-topic="welcome" data-topic-label="&#128075; Welcome">
 <div class="post-meta">
 <time datetime="2026-02-22">February 22, 2026</time>
 <span class="group-tags"></span>
@@ -442,13 +499,13 @@
           </a>
 </h3>
 <p class="post-excerpt">
-          Introduction to the blog’s purpose and the Promptomat tool — a lightweight
+          Introduction to the blog's purpose and the Promptomat tool &mdash; a lightweight
           system for generating structured prompts to support complex AI workflows.
           Sets the stage for documenting a long-term development journey.
         </p>
 <div class="post-footer">
-<div class="post-actions"><a class="read-more" href="posts/promptomat-creation.html">Read more →</a><a class="series-bubble" href="posts/promptomat-evolution.html" title="Next in series">Next: Part 2 →</a></div>
-<p class="post-excerpt post-meta2">👋 welcome • 🧠 meta • ⚙️ workflow • 🧰 tools • 🎮 gaming</p>
+<div class="post-actions"><a class="read-more" href="posts/promptomat-creation.html">Read more &rarr;</a><a class="series-bubble" href="posts/promptomat-evolution.html" title="Next in series">Next: Part 2 &rarr;</a></div>
+<p class="post-excerpt post-meta2">&#128075; welcome &bull; &#129504; meta &bull; &#9881;&#65039; workflow &bull; &#129520; tools &bull; &#127918; gaming</p>
 </div>
 </article>
 <p class="no-posts" hidden="" id="no-posts">No posts match your filters.</p>
@@ -459,7 +516,7 @@
 <section class="subscription-section" id="subscription">
   <div class="container">
     <div class="subscription-box">
-      <h2>📬 Subscribe for Updates</h2>
+      <h2>&#128236; Subscribe for Updates</h2>
       <p>Get notified when new posts are published. No spam, just updates.</p>
       
       <!-- Follow.it Widget Container -->
@@ -563,14 +620,14 @@
 <footer class="site-footer">
 <div class="container">
 <p>
-<a href="https://github.com/evergreenGaming">GitHub</a> •
-        <a href="https://github.com/evergreenGaming/AIhelpers">AI Helpers</a> •
+<a href="https://github.com/evergreenGaming">GitHub</a> &bull;
+        <a href="https://github.com/evergreenGaming/AIhelpers">AI Helpers</a> &bull;
         <a href="feed.xml">RSS Feed</a>
 </p>
 <p class="footer-note">"Created in under 2 hours, thanks to evolving AI" - Moritz Meyers</p>
 <p style="margin-top: 16px; font-size: 0.85rem;">
 <strong>Impressum</strong><br/>
-        Moritz Meyers • <a href="https://github.com/evergreenGaming">Contact via GitHub</a>
+        Moritz Meyers &bull; <a href="https://github.com/evergreenGaming">Contact via GitHub</a>
 </p>
 </div>
 </footer>
@@ -783,7 +840,7 @@
 
     activeIconRole = role;
     const cfg = iconSettings[role];
-    title.textContent = `${role === "gaming" ? "🎮 Gaming" : "🤖 Robot"} Settings`;
+    title.textContent = `${role === "gaming" ? "Gaming" : "Robot"} Settings`;
     minInput.value = String(cfg.minDelay);
     maxInput.value = String(cfg.maxDelay);
     intensityInput.value = String(cfg.intensity);
@@ -992,7 +1049,7 @@
 
   function renderTagDisplays(cards, tagSelect, updateCallback) {
     cards.forEach((card) => {
-      // Update group-tags in post-meta (topic • project)
+      // Update group-tags in post-meta (topic | project)
       const groupTagsEl = card.querySelector(".post-meta .group-tags");
       if (groupTagsEl) {
         const parts = [];
@@ -1002,7 +1059,7 @@
         if (topicLabel) parts.push(topicLabel);
         if (projectLabel) parts.push(projectLabel);
         
-        groupTagsEl.textContent = parts.join(" • ");
+        groupTagsEl.textContent = parts.join(" | ");
       }
       
       // Update post-meta2 with only tags (not topic/project)
@@ -1015,7 +1072,7 @@
       if (tagStr) {
         const tags = tagStr.split(",").map((t) => t.trim()).filter(Boolean);
         tags.forEach((tag, idx) => {
-          if (idx > 0) metaEl.appendChild(document.createTextNode(" • "));
+          if (idx > 0) metaEl.appendChild(document.createTextNode(" | "));
           
           const tagLabel = TAG_LABELS[tag] || tag;
           const tagLink = document.createElement("span");
@@ -1046,3 +1103,4 @@
 </script>
 </body>
 </html>
+

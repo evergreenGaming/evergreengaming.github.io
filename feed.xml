@@ -3,7 +3,7 @@
   <title>Evergreen Gaming Dev Blog</title>
   <link href="https://evergreengaming.github.io/" rel="alternate" type="text/html"/>
   <link href="https://evergreengaming.github.io/feed.xml" rel="self" type="application/atom+xml"/>
-  <updated>2026-03-12T00:00:00Z</updated>
+  <updated>2026-04-10T00:00:00Z</updated>
   <id>https://evergreengaming.github.io/</id>
   <subtitle>Game development powered by AI Collaboration. A structured public lab notebook documenting projects, tools, and experiments.</subtitle>
   <author>
@@ -11,8 +11,35 @@
     <uri>https://github.com/evergreenGaming</uri>
   </author>
 
+  <entry>
+    <title>The Encoding Ghost in the Machine: Mojibake and the Slow Death of Good Text</title>
+    <link href="https://evergreengaming.github.io/posts/mojibake-encoding-nightmare.html" rel="alternate" type="text/html"/>
+    <id>https://evergreengaming.github.io/posts/mojibake-encoding-nightmare.html</id>
+    <published>2026-04-10T00:00:00Z</published>
+    <updated>2026-04-10T00:00:00Z</updated>
+    <summary>A draft about the encoding nightmare that can start with one broken symbol and then keep spreading into surrounding text, plans, labels, and code-adjacent content across projects.</summary>
+    <category term="meta"/>
+    <category term="workflow"/>
+    <category term="tools"/>
+    <category term="web"/>
+  </entry>
 
-  
+  <entry>
+    <title>The Founder Loop Is Real: Promptomat, Heatstack, and Visible Progress</title>
+    <link href="https://evergreengaming.github.io/posts/founder-loop-progress-story.html" rel="alternate" type="text/html"/>
+    <id>https://evergreengaming.github.io/posts/founder-loop-progress-story.html</id>
+    <published>2026-04-09T00:00:00Z</published>
+    <updated>2026-04-09T00:00:00Z</updated>
+    <summary>A founder-story checkpoint tying together Promptomat dashboard progress, the VS Code companion loop, Heatstack's breakout visual direction, and FlyingGame momentum into one visible proof surface.</summary>
+    <category term="meta"/>
+    <category term="workflow"/>
+    <category term="tools"/>
+    <category term="ui"/>
+    <category term="product"/>
+    <category term="timeline"/>
+    <category term="finance"/>
+    <category term="gaming"/>
+  </entry>
 
   <entry>
     <title>From Prototype Chaos to a Sharper Creative Pipeline</title>
@@ -181,7 +208,7 @@
     <id>https://evergreengaming.github.io/posts/promptomat-creation.html</id>
     <published>2026-02-22T00:00:00Z</published>
     <updated>2026-02-22T00:00:00Z</updated>
-    <summary>Introduction to the blog's purpose and the Promptomat tool — a lightweight system for generating structured prompts to support complex AI workflows. Sets the stage for documenting a long-term development journey.</summary>
+    <summary>Introduction to the blog's purpose and the Promptomat tool - a lightweight system for generating structured prompts to support complex AI workflows. Sets the stage for documenting a long-term development journey.</summary>
     <category term="welcome"/>
     <category term="meta"/>
     <category term="workflow"/>

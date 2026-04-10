@@ -1,0 +1,178 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8"/>
+<meta content="width=device-width,initial-scale=1" name="viewport"/>
+<title>The Encoding Ghost in the Machine: Mojibake and the Slow Death of Good Text - Evergreen Gaming</title>
+<link href="../style.css" rel="stylesheet"/>
+<script src="../tags-config.js"></script>
+<script src="../post-helper.js"></script>
+<style>
+  .post-content {
+    max-width: 860px;
+    margin: 0 auto;
+    padding: 60px 20px;
+  }
+  .post-header {
+    margin-bottom: 40px;
+    padding-bottom: 24px;
+    border-bottom: 1px solid var(--border);
+  }
+  .post-content h1 {
+    margin: 0 0 16px;
+    font-size: 2.5rem;
+    line-height: 1.15;
+  }
+  .post-content h2 {
+    margin: 40px 0 16px;
+    color: var(--accent);
+    font-size: 1.75rem;
+  }
+  .post-content p,
+  .post-content li,
+  .post-content blockquote {
+    line-height: 1.8;
+  }
+  .post-content p,
+  .post-content blockquote {
+    margin: 0 0 20px;
+  }
+  .post-content ul,
+  .post-content ol {
+    margin: 0 0 20px;
+    padding-left: 24px;
+  }
+  .post-content code {
+    padding: 2px 6px;
+    background: var(--panel2);
+    border: 1px solid var(--border);
+    border-radius: 4px;
+    font-family: "Courier New", monospace;
+    font-size: 0.92em;
+  }
+  .back-link {
+    display: inline-block;
+    margin-bottom: 24px;
+    color: var(--muted);
+  }
+  .back-link:hover {
+    color: var(--accent);
+  }
+  blockquote {
+    margin: 24px 0;
+    padding: 16px 18px;
+    border-left: 4px solid var(--accent);
+    background: var(--panel);
+    border-radius: var(--radius);
+    font-style: italic;
+  }
+  .callout {
+    margin: 28px 0;
+    padding: 18px 20px;
+    border: 1px solid rgba(122, 163, 255, 0.22);
+    border-radius: 18px;
+    background:
+      radial-gradient(circle at top right, rgba(45, 134, 89, 0.14), transparent 34%),
+      linear-gradient(180deg, rgba(255, 255, 255, 0.03), rgba(255, 255, 255, 0.01)),
+      var(--panel);
+  }
+  .callout strong {
+    display: block;
+    margin-bottom: 8px;
+  }
+</style>
+</head>
+<body>
+<div class="post-content">
+<a class="back-link" href="../index.html">&larr; Back to home</a>
+<header class="post-header">
+<div class="post-meta">
+<time datetime="2026-04-10">April 10, 2026</time>
+</div>
+<h1>The Encoding Ghost in the Machine: Mojibake and the Slow Death of Good Text</h1>
+</header>
+<article>
+<p><span data-post-topic></span> <span data-post-project></span><br/>
+<span data-post-tags></span></p>
+
+<p>This is a draft for a post we probably would not have planned on purpose. It came out of pain.</p>
+
+<p>Across multiple projects, we kept seeing the same strange damage pattern: icons in headers break, arrows mutate, bullets rot, list labels turn into junk, and suddenly text that looked fine yesterday turns into byte-garbage. Then it spreads. A file gets resaved. A template gets copied. Another page inherits the corruption. It feels less like one bug and more like a silent parasite moving through the content layer.</p>
+
+<blockquote>It does not crash the app. It just slowly eats meaning.</blockquote>
+
+<h2>What This Thing Actually Is</h2>
+<p>The technical name is <strong>mojibake</strong>. It happens when text is encoded one way and decoded another way. The bytes are still there, but they are being interpreted through the wrong lens.</p>
+
+<p>In practice, that means a symbol that should have rendered as an emoji, an arrow, a bullet, or a smart quote gets turned into a broken byte pattern that then becomes literal source text the next time the file is saved.</p>
+
+<p>The scary part is that the damage does not always stay attached to the original symbol. It can move outward. A broken emoji does not necessarily stay "just a broken emoji." The separator next to it mutates. The text around it starts to rot. A label becomes unreadable. A nearby quote breaks. On the next save, even more surrounding text can come back altered. In the worst cases, the corruption leaks past the human-facing text and starts damaging code-adjacent content, markup boundaries, or config-shaped text that never should have been involved in the first place.</p>
+
+<div class="callout">
+  <strong>Why it feels like a virus</strong>
+  <p>Because it can propagate beyond the original wound. One bad read becomes one bad save. One bad save becomes new corrupted source. Then that source gets copied into a new page, config, template, plan, or script. The infection is not magical. It is just encoding damage that survives contact with more tools and keeps widening its blast radius.</p>
+</div>
+
+<h2>Why It Matters More Than It Looks</h2>
+<p>At first glance, mojibake looks cosmetic. It is easy to dismiss as a few ugly symbols. But it is more important than that because it reveals a deeper weakness in the toolchain.</p>
+
+<ul>
+  <li>It shows where our environments are not consistently UTF-8 safe.</li>
+  <li>It proves that copy and save paths are not neutral.</li>
+  <li>It creates trust issues in documentation, plans, and UI labels.</li>
+  <li>It punishes exactly the kinds of expressive touches people add to improve readability.</li>
+</ul>
+
+<p>The worst part is not that a robot icon looks wrong. The worst part is that the corruption can keep spreading outward from that original symbol and start rewriting the context around it. Once that starts happening, every file feels fragile, because the boundary between "cosmetic text issue" and "real source corruption" stops being trustworthy.</p>
+
+<h2>Why We Started Avoiding Emoji In Some Projects</h2>
+<p>We like expressive interfaces. We like tiny bits of visual language. But over time we learned the hard way that raw emoji in Markdown, config files, and shared source text can become a liability in mixed environments.</p>
+
+<p>That shift did not come from abstract purity. It came from watching corruption start at one visible symbol and then keep crawling.</p>
+
+<h2>The Creepy Part: Even "Working" Icons Can Die Later</h2>
+<p>One reason this problem feels uncanny is that the content can look correct for a while. The header icon works. The animated symbol works. The post renders correctly. Then later a different tool touches the file, and the exact same content comes back damaged.</p>
+
+<p>So the real issue is not just what a browser can render. The issue is the full journey:</p>
+
+<ol>
+  <li>authoring</li>
+  <li>editing</li>
+  <li>copying</li>
+  <li>rewriting</li>
+  <li>saving</li>
+  <li>reusing content across projects</li>
+</ol>
+
+<p>Anywhere in that chain, text can be decoded or re-encoded badly.</p>
+
+<p>That is what makes this feel worse than a normal visual bug. A normal visual bug is bounded. This is not. This can sit quietly in source, get copied around because nobody notices immediately, then come back later in a different file wearing a different mask. It can start from an emoji, but it does not necessarily end there. It can keep eating the surrounding content and then survive long enough to be saved as if the corruption were the truth.</p>
+
+<h2>Why This Is Worth Writing About</h2>
+<p>We spend a lot of time talking about performance, AI workflows, visuals, and architecture. But text fidelity is part of all of those systems. When encoding goes bad, content itself becomes unstable. That matters for docs, plans, blogs, dashboards, project settings, and any generated surface.</p>
+
+<p>So yes, this feels important. Not because mojibake is new, but because we ran into it across enough real projects to see its real shape: not one broken icon, but a content-integrity failure mode that can cross boundaries and damage more than the thing that first triggered it.</p>
+
+<h2>What We Changed After Getting Burned</h2>
+<p>The operational response came later. The fear came first.</p>
+
+<p>After enough rounds of this, we started backing away from raw emoji in durable Markdown and mixed-source text, and we became much more suspicious of any toolchain that quietly rewrites files. That practical response matters, but it is secondary to the real lesson: once content corruption can silently propagate, text handling stops being a cosmetic concern and becomes part of the project's reliability model.</p>
+
+<p>This draft is a placeholder for the fuller post. The stronger published version should probably include:</p>
+
+<ul>
+  <li>one or two real before/after corruption examples</li>
+  <li>a stronger example of the corruption spreading past the original symbol into surrounding text</li>
+  <li>where it showed up: blog, lists, plans, headers, and code-adjacent content</li>
+  <li>what we changed operationally afterward, as a short final section rather than the main point</li>
+</ul>
+</article>
+<a class="back-link" href="../index.html">&larr; Back to home</a>
+</div>
+<footer class="site-footer">
+<div class="container">
+<p>Evergreen Gaming Dev Blog. Built with AI collaboration.</p>
+</div>
+</footer>
+</body>
+</html>
